@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Database\QueryException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -12,8 +13,21 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->api(append:\App\Http\Middleware\ValideateHeaderMiddleware::class );
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        $exceptions->render(fn(QueryException $e)=>errorQueryException());
         //
     })->create();
+
+
+function errorQueryException(){
+    return response()->json([
+        "errors" => [
+            "status" => 500,
+            "title" => "Error en Base de Datos",
+            "datail"=>"LA base de datos no responde, Intentalo más tarde"
+        ]
+    ]);
+}
