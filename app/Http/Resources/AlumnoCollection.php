@@ -14,17 +14,7 @@ class AlumnoCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return
-        [
-            "id"=>$this->id,
-            "type"=>"alumnos",
-            "attributes"=>
-            [
-                "nombre"=>$this->nombre,
-                "apellido"=>$this->apellido,
-                "email"=>$this->email,
-                "telefono"=>$this->telefono,
-            ]
-            ];
+        return  ["data" => $this->collection];
+        
     }
 }

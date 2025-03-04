@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Resources\AlumnoCollection;
+use App\Models\Alumno;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +13,7 @@ class AlumnoApiController extends Controller
      */
     public function index()
     {
-        //
+     return new AlumnoCollection(Alumno::all()); 
     }
 
     /**
