@@ -50,16 +50,5 @@
                 </iframe>
             </div>
         </div>
-
-        <!-- Información de contacto -->
-        <div class="mt-8 bg-orange-100 p-6 rounded-lg shadow-md md:w-2/3 mx-auto text-center">
-            <h3 class="text-2xl font-semibold text-gray-700 mb-4">Información de Contacto</h3>
-            <div class="space-y-4 text-lg">
-                <p class="text-sm">Maria Lopez</p>
-                <p class="text-sm">Dirección: Calle Ficticia, 123, 3er Piso</p>
-                <p class="text-sm">Teléfono: +34 123 456 789</p>
-                <p class="text-sm">Email: maria@example.com</p>
-            </div>
-        </div>
     </div>
 </x-layouts.layout>

@@ -1,42 +1,48 @@
-<x-layouts.layout>
-<div class="relative min-h-screen bg-cover bg-center"
-    style="background-image: url('{{asset('/img/fondo.jpg')}}');">
-    
+<x-layouts.layout title="Home">
     @guest
-        <!-- Vista para usuarios no autenticados -->
-        <div class="flex justify-center items-center min-h-screen">
-            <div class="card w-96 bg-white shadow-xl rounded-lg">
-                <div class="card-body text-center">
-                    <h1 class="mb-5 text-5xl font-bold">Bienvenido</h1>
-                    <p class="mb-5">
-                        Para acceder, inicia sesión en la plataforma.
-                    </p>
-                    <a href="{{ route('login') }}" class="btn bg-orange-500 text-white hover:bg-orange-400 border-none">Iniciar Sesión</a>
-                </div>
+    <div class="hero min-h-full" style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+                <p class="mb-5">
+                    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+                </p>
+                <!-- Botón para mostrar el formulario de inicio de sesión -->
+                <button id="loginButton" class="btn btn-primary">¿No tienes cuenta? Registrate</button>
             </div>
         </div>
+    </div>
+
+    <script>
+        // Obtén los elementos del DOM
+        const loginButton = document.getElementById('loginButton');
+        const loginForm = document.getElementById('loginForm');
+
+        // Cuando se hace clic en "Inicia sesión", muestra el formulario de inicio de sesión
+        loginButton.addEventListener('click', () => {
+            loginForm.classList.toggle('hidden'); // Muestra u oculta el formulario
+        });
+
+        // Si el usuario hace clic en el enlace de "Registrate", puedes redirigirlo a la página de registro
+        loginButton.addEventListener('click', () => {
+            window.location.href = "/register"; // Cambia la URL para redirigir al formulario de registro
+        });
+    </script>
     @endguest
 
     @auth
-        <!-- Vista para usuarios autenticados -->
-        <div class="flex justify-center items-center min-h-screen">
-            <div class="card w-96 bg-white shadow-xl rounded-lg">
-                <div class="card-body text-center">
-                    <h2 class="mb-5 text-3xl font-bold justify-center card-title">Ver Infromacion</h2>
-                    <p class="mb-4">Accede a las listas.</p>
-                    <div class="card-actions justify-center">
-                    <a href ="{{ route('alumnos.index') }}" class="btn bg-orange-500 text-white hover:bg-orange-400 border-none"> Alumnos</a> 
-
-                    <a href ="{{ route('profesores') }}" class="btn bg-orange-500 text-white hover:bg-orange-400 border-none"> Profesores</a> 
-                    
-                    <a href ="{{ route('proyectos') }}" class="btn bg-orange-500 text-white hover:bg-orange-400 border-none">Proyectos</a> 
-                    </div>
-                </div>
+    <div class="card image-full w-96 shadow-xl ml-5 pt-5">
+        <figure>
+            <img src="{{asset('img/alumnos.webp')}}" alt="Alumnos" />
+        </figure> 
+        <div class="card-body pr-3 pt-5">
+            <h2 class="card-title">Alumnos</h2>
+            <p>Accede a la lista de alumnos</p>
+            <div class="card-actions justify-end">
+                <button id= "alumnosButton" class=" btn btn-primary">Ver alumnos</button>
             </div>
         </div>
+    </div>
     @endauth
-
-</div>
-</div>
-
 </x-layouts.layout>
