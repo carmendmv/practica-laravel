@@ -43,7 +43,7 @@
                                 <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST" id="formulario{{$alumno->id}}" class="inline-block" onsubmit="event.preventDefault()">
                                     @method('DELETE')
                                     @csrf
-                                    <button submit" class="btn btn-sm bg-red-500 text-white rounded-lg hover:bg-red-300 px-4 py-2 transition-colors duration-300" onclick="confirmDelete({{ $alumno->id }}, '{{ $alumno->nombre }}')">Eliminar</button>
+                                    <button submit class="btn btn-sm bg-red-500 text-white rounded-lg hover:bg-red-300 px-4 py-2 transition-colors duration-300" onclick="confirmDelete({{ $alumno->id }}, '{{ $alumno->nombre }}')">Eliminar</button>
                                 </form>
                             </td>
                         </tr>

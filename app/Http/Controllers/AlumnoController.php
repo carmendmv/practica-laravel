@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAlumnoRequest;
 use App\Http\Requests\UpdateAlumnoRequest;
 use Illuminate\Http\Request;
+use App\Http\Resources\AlumnoCollection;
 
 use App\Models\Alumno;
 
@@ -17,6 +18,7 @@ class AlumnoController extends Controller
     {
         $alumnos = Alumno::all()/* ->sortBy('apellido') */;
         return view("alumno.index", ['alumnos' => $alumnos]);
+        return new AlumnoCollection(Alumno::all());
     }
 
     /**
