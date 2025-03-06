@@ -39,8 +39,8 @@
         <div class="card-body pr-3 pt-5">
             <h2 class="card-title">Alumnos</h2>
             <p>Accede a la lista de alumnos</p>
-            <div class="card-actions justify-end">
-                <button id= "alumnosButton" class=" btn btn-primary">Ver alumnos</button>
+            <div class="card-actions justify-end m">
+               
             </div>
         </div>
     </div>

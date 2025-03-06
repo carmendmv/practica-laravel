@@ -1,6 +1,6 @@
 <x-layouts.layout>
     <div class="min-h-full flex flex-col justify-center items-center p-6">
-        <h1 class="text-4xl text-green-700 mb-6">Listado de profesores</h1>
+        <h1 class="text-4xl text-purple-700 mb-6">Listado de profesores</h1>
         
         <div class="w-full max-w-4xl">
             <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">

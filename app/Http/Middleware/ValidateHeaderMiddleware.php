@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ValideateHeaderMiddleware
+class ValidateHeaderMiddleware
 {
     /**
      * Handle an incoming request.
@@ -22,7 +22,7 @@ class ValideateHeaderMiddleware
                     "title" => "Not Acceptable",
                     "datails"=>"Value Field Accept is not acceptable"
                 ]
-            ]);
+            ],406);
 
 
         return $next($request);
