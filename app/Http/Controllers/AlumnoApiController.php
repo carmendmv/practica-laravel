@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreAlumnoRequest;
 use App\Http\Resources\AlumnoCollection;
 use App\Models\Alumno;
 use App\Http\Resources\AlumnoResource;
@@ -20,7 +22,7 @@ class AlumnoApiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAlumnoRequest $request)
     {
         $datos = $request->input("data.atributes");
         $alumno = new Alumno($datos);

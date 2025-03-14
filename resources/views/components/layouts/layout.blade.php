@@ -13,7 +13,7 @@
     
     <x-layouts.nav></x-layouts.nav>
 
-<main class="bg-main flex-grow bg-main h-65v">
+<main class="bg-main flex-grow ">
     {{$slot}}
 </main>
 
